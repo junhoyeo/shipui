@@ -1,0 +1,12 @@
+.vscode
+build
+coverage
+coverage.json
+
+.next
+.vercel
+
+# Yarn
+.yarn
+.pnp.cjs
+.pnp.loader.mjs
