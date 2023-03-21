@@ -4,9 +4,9 @@
   "description": "UI components to ship stuff",
   "private": true,
   "license": "MIT",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "typings": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "author": "Junho Yeo <i@junho.io>",
   "repository": "https://github.com/junhoyeo/shipui",
   "scripts": {
