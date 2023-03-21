@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import ReactSelect, { Props as ReactSelectProps } from 'react-select'
 
 import { PaletteProps, useColors } from '@/utils/colors'
@@ -11,7 +11,7 @@ export type SelectOption = {
 
 export type CustomSelectProps = {
   instanceId?: string
-  value: string
+  defaultValue: string
   options: SelectOption[]
   onChange: (selected: SelectOption) => void
 }
@@ -19,29 +19,42 @@ export type CustomSelectProps = {
 type OmitAll<T, K extends keyof T> = {
   [P in keyof T as P extends K ? never : P]: T[P]
 }
-type OmittedProps = 'value' | 'onChange' | 'options'
+type OmittedProps = 'defaultValue' | 'onChange' | 'options'
 export type SelectProps = CustomSelectProps & OmitAll<ReactSelectProps, OmittedProps>
 
 const defaultInstanceid = 'react-select'
 
 export const Select: React.FC<SelectProps> = ({
   instanceId = defaultInstanceid,
-  value,
+  defaultValue,
   options,
   onChange: handleChange,
   ...props
 }) => {
   const colors = useColors()
 
+  const [selectedOption, setSelectedOption] = useState<SelectOption | null>(
+    options.find((v) => v.value === defaultValue) || null,
+  )
   const onChange = useCallback(
     (selected: unknown) => {
       if (!selected) {
         return
       }
+      setSelectedOption(selected as SelectOption)
       handleChange(selected as SelectOption)
     },
     [handleChange],
   )
+
+  useEffect(() => {
+    if (selectedOption) {
+      const option = options.find((option) => option.value === selectedOption.value)
+      if (option && option.label !== selectedOption.label) {
+        setSelectedOption(option)
+      }
+    }
+  }, [selectedOption, options])
 
   return (
     <StyledSelect
@@ -50,7 +63,7 @@ export const Select: React.FC<SelectProps> = ({
       instanceId={instanceId}
       classNamePrefix="react-select"
       options={options}
-      defaultValue={options.find((v) => v.value === value)}
+      value={selectedOption}
       onChange={onChange}
       isSearchable={false}
       {...props}
