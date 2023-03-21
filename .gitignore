@@ -11,8 +11,11 @@ coverage
 # next.js
 .vercel
 .next
+
 out
+dist
 build
+*.tsbuildinfo
 
 ## Yarn
 .yarn/cache
