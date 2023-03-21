@@ -37,7 +37,7 @@ export const MetaHead: React.FC<MetaHeadProps> = ({ children, ...meta }) => {
       <meta key="twitter:title" property="twitter:title" content={currentTitle} />
       <meta key="twitter:description" property="twitter:description" content={meta.description} />
       <meta key="twitter:image" property="twitter:image" content={imageURL} />
-      <meta key="theme-color" name="theme-color" content="#050606" />
+      <meta key="theme-color" name="theme-color" content={meta.themeColor} />
       {children}
     </Head>
   )

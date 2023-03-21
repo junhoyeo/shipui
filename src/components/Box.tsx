@@ -7,7 +7,7 @@ export const Box = styled.div`
   width: 100%;
 
   border-radius: 20px;
-  background-color: ${Colors.foreground100};
+  background-color: ${Colors.foreground};
 
   display: flex;
   flex-direction: column;

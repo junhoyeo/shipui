@@ -7,6 +7,7 @@ export const Colors = {
   light: '#c0cceb',
   active: 'rgba(28, 92, 255, 0.4)',
   text: '#737685',
+  keyword: '#132d49',
   background: '#f3f4f5',
-  foreground100: '#fff',
+  foreground: '#fff',
 }

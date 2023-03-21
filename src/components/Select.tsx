@@ -77,7 +77,7 @@ const StyledSelect = styled(ReactSelect)`
   }
 
   .react-select__single-value {
-    color: #132d49;
+    color: ${Colors.keyword};
   }
 
   .react-select__option {

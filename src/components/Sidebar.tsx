@@ -79,7 +79,7 @@ const Highlight = styled.div`
   top: 0;
   left: 0;
   border-radius: 8px;
-  background: rgba(29, 187, 255, 0.25);
+  background: ${Colors.opacity20};
   width: 100%;
   height: 48px;
   z-index: -1;
