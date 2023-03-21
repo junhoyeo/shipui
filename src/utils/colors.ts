@@ -4,7 +4,6 @@ export const Colors = {
   opacity40: 'rgba(28, 92, 255, 0.4)',
   opacity35: 'rgba(28, 92, 255, 0.35)',
   opacity20: 'rgba(28, 92, 255, 0.2)',
-  light: '#c0cceb',
   active: 'rgba(28, 92, 255, 0.4)',
   text: '#737685',
   keyword: '#132d49',

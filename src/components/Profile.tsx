@@ -27,7 +27,7 @@ const ProfileImage = styled.div`
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: ${Colors.light};
+  background: ${Colors.opacity35};
 
   display: flex;
   justify-content: center;
