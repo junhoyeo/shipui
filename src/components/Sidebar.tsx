@@ -4,8 +4,8 @@ import { useCallback, useState } from 'react'
 
 import { Colors } from '@/utils/colors'
 
-export type SidebarItem = { title: string; url: string }
-export type SidebarProps = {
+type SidebarItem = { title: string; url: string }
+type SidebarProps = {
   selected?: string
   items: SidebarItem[]
 }
@@ -16,14 +16,24 @@ export const Sidebar: React.FC<SidebarProps> = ({ selected, items }) => {
   const onMouseMove = useCallback(
     (e: React.MouseEvent) => {
       const target = e.target as HTMLElement
-      const index = items.indexOf(items.find((item) => item.title === target.innerText.trim()))
+      const item = items.find((item) => item.title === target.innerText.trim())
+      if (!item) {
+        setOffset(0)
+        return
+      }
+      const index = items.indexOf(item)
       setOffset(index * 48)
     },
     [items],
   )
 
   const onMouseLeave = useCallback(() => {
-    const index = !selected ? 0 : items.indexOf(items.find((item) => item.url === selected))
+    const item = items.find((item) => item.url === selected)
+    if (!item) {
+      setOffset(0)
+      return
+    }
+    const index = !selected ? 0 : items.indexOf(item)
     setOffset(index * 48)
   }, [selected, items])
 
@@ -69,7 +79,7 @@ const Highlight = styled.div`
   top: 0;
   left: 0;
   border-radius: 8px;
-  background: ${Colors.active};
+  background: rgba(29, 187, 255, 0.25);
   width: 100%;
   height: 48px;
   z-index: -1;
