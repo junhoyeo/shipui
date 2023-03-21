@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 import { useCallback, useState } from 'react'
 
-import { Colors } from '@/utils/colors'
+import { PaletteProps, useColors } from '@/utils/colors'
 
 type SidebarItem = { title: string; url: string }
 type SidebarProps = {
@@ -11,6 +11,7 @@ type SidebarProps = {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ selected, items }) => {
+  const colors = useColors()
   const [offset, setOffset] = useState<number>(0)
 
   const onMouseMove = useCallback(
@@ -40,10 +41,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ selected, items }) => {
   return (
     <Wrapper>
       <Container onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
-        <Highlight style={{ transform: `translateY(${offset}px)` }} />
+        <Highlight colors={colors} style={{ transform: `translateY(${offset}px)` }} />
         {items.map((item) => (
           <Link key={item.url} href={item.url}>
-            <Item>{item.title}</Item>
+            <Item colors={colors}>{item.title}</Item>
           </Link>
         ))}
       </Container>
@@ -64,7 +65,7 @@ const Container = styled.div`
   position: relative;
   z-index: 0;
 `
-const Item = styled.div`
+const Item = styled.div<PaletteProps>`
   height: 48px;
   padding: 0 16px;
   cursor: pointer;
@@ -72,14 +73,14 @@ const Item = styled.div`
   align-items: center;
 
   font-weight: 600;
-  color: ${Colors.text};
+  color: ${({ colors }) => colors.text};
 `
-const Highlight = styled.div`
+const Highlight = styled.div<PaletteProps>`
   position: absolute;
   top: 0;
   left: 0;
   border-radius: 8px;
-  background: ${Colors.opacity20};
+  background: ${({ colors }) => colors.opacity20};
   width: 100%;
   height: 48px;
   z-index: -1;

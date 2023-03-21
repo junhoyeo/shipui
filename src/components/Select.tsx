@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { useCallback } from 'react'
 import ReactSelect from 'react-select'
 
-import { Colors } from '@/utils/colors'
+import { DefaultColors, PaletteProps, useColors } from '@/utils/colors'
 
 export type SelectOption = {
   value: string
@@ -24,6 +24,8 @@ export const Select: React.FC<SelectProps> = ({
   options,
   onChange: handleChange,
 }) => {
+  const colors = useColors()
+
   const onChange = useCallback(
     (selected: unknown) => {
       if (!selected) {
@@ -36,6 +38,7 @@ export const Select: React.FC<SelectProps> = ({
 
   return (
     <StyledSelect
+      colors={colors}
       id={instanceId}
       instanceId={instanceId}
       classNamePrefix="react-select"
@@ -47,10 +50,10 @@ export const Select: React.FC<SelectProps> = ({
   )
 }
 
-const StyledSelect = styled(ReactSelect)`
+const StyledSelect = styled(ReactSelect)<PaletteProps>`
   width: 136px;
   user-select: none;
-  color: ${Colors.text};
+  color: ${({ colors }) => colors.text};
 
   .react-select__indicator-separator {
     display: none;
@@ -77,22 +80,22 @@ const StyledSelect = styled(ReactSelect)`
   }
 
   .react-select__single-value {
-    color: ${Colors.keyword};
+    color: ${({ colors }) => colors.keyword};
   }
 
   .react-select__option {
     cursor: pointer;
 
     &:active {
-      background-color: ${Colors.opacity40};
+      background-color: ${({ colors }) => colors.opacity40};
     }
 
     &--is-selected {
-      background-color: ${Colors.primary} !important;
+      background-color: ${({ colors }) => colors.primary} !important;
     }
 
     &--is-focused {
-      background-color: ${Colors.opacity20};
+      background-color: ${({ colors }) => colors.opacity20};
 
       &.react-select__option--is-selected {
         color: rgba(255, 255, 255, 0.85);

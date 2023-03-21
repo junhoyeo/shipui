@@ -3,7 +3,7 @@ import { useNProgress } from '@tanem/react-nprogress'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
-import { Colors } from '@/utils/colors'
+import { PaletteProps, useColors } from '@/utils/colors'
 
 export const useLoadingProgressProps = () => {
   const router = useRouter()
@@ -55,22 +55,26 @@ export type LoadingProgressProps = {
 }
 
 export const LoadingProgress: React.FC<LoadingProgressProps> = ({ isRouteChanging }) => {
+  const colors = useColors()
+
   const props = useNProgress({
     isAnimating: isRouteChanging,
   })
 
   return (
-    <Container {...props}>
+    <Container colors={colors} {...props}>
       <div />
     </Container>
   )
 }
 
-const Container = styled.div<{
-  isFinished: boolean
-  animationDuration: number
-  progress: number
-}>`
+const Container = styled.div<
+  PaletteProps & {
+    isFinished: boolean
+    animationDuration: number
+    progress: number
+  }
+>`
   opacity: ${({ isFinished }) => (isFinished ? 0 : 1)};
   pointer-events: none;
   transition: opacity ${({ animationDuration }) => animationDuration}ms linear;
@@ -86,7 +90,7 @@ const Container = styled.div<{
     left: 0;
     z-index: 100;
 
-    background: ${Colors.primary};
+    background: ${({ colors }) => colors.primary};
     transition: margin-left ${({ animationDuration }) => animationDuration}ms linear;
   }
 `

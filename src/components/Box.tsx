@@ -1,13 +1,13 @@
 import styled from '@emotion/styled'
 
-import { Colors } from '@/utils/colors'
+import { DefaultColors } from '@/utils/colors'
 
 export const Box = styled.div`
   padding: 20px;
   width: 100%;
 
   border-radius: 20px;
-  background-color: ${Colors.foreground};
+  background-color: ${DefaultColors.foreground};
 
   display: flex;
   flex-direction: column;

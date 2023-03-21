@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { Colors } from '@/utils/colors'
+import { DefaultColors } from '@/utils/colors'
 
 export const ButtonList = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const Button = styled.button`
   padding: 12px 16px;
   border-radius: 12px;
   border: 0;
-  background: ${Colors.background};
+  background: ${DefaultColors.background};
 
   font-size: 1rem;
   font-weight: 600;

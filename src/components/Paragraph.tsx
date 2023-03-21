@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { Colors } from '@/utils/colors'
+import { DefaultColors } from '@/utils/colors'
 
 export const Paragraph = styled.p`
   font-weight: 500;
@@ -8,5 +8,5 @@ export const Paragraph = styled.p`
   line-height: 132%;
   text-align: center;
   letter-spacing: -0.02em;
-  color: ${Colors.text};
+  color: ${DefaultColors.text};
 `
