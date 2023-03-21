@@ -1,5 +1,6 @@
 {
   "name": "shipui",
+  "description": "UI components to ship stuff",
   "private": true,
   "license": "MIT",
   "author": "Junho Yeo <i@junho.io>",
