@@ -10,7 +10,7 @@
   "repository": "https://github.com/junhoyeo/shipui",
   "scripts": {
     "format": "prettier --write .",
-    "build": "tsc"
+    "build": "tsc && tsc-alias"
   },
   "files": [
     "dist",
@@ -23,6 +23,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "prettier": "^2.8.6",
+    "tsc-alias": "^1.8.4",
     "typescript": "^5.0.2"
   },
   "dependencies": {
