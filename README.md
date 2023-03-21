@@ -6,8 +6,14 @@
 shipui
 </h1>
 
-<pre align="center"><code>yarn add shipui</code></pre>
-
 <blockquote align="center">
   ⚓️ UI components to ship stuff
 </blockquote>
+
+## 📦 Installation
+
+```bash
+yarn add shipui
+# Or with NPM
+npm install shipui
+```
