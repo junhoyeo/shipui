@@ -1,7 +1,3 @@
-<p align="center">
-  <img alt="pirate-flag" src="./.github/pirate-flag.png" width="72" />
-</p>
-
 <h1 align="center">
 shipui
 </h1>

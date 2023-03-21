@@ -1,13 +1,23 @@
 {
   "name": "shipui",
+  "version": "0.1.0",
   "description": "UI components to ship stuff",
   "private": true,
   "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
   "author": "Junho Yeo <i@junho.io>",
+  "repository": "https://github.com/junhoyeo/shipui",
   "scripts": {
     "format": "prettier --write .",
     "build": "tsc"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
     "@types/node": "^18.15.5",
