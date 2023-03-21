@@ -2,7 +2,6 @@
   "name": "shipui",
   "version": "0.1.1-canary.0",
   "description": "UI components to ship stuff",
-  "private": true,
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
