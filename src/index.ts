@@ -18,4 +18,11 @@ export { Profile } from '@/components/Profile'
 export { Row } from '@/components/Row'
 export { Select, type SelectOption, type SelectProps } from '@/components/Select'
 export { Textarea } from '@/components/Textarea'
-export { DefaultColors as Colors } from '@/utils/colors'
+export {
+  DefaultColors,
+  type Palette,
+  type PaletteProps,
+  ColorContext,
+  ColorProvider,
+  useColors,
+} from '@/utils/colors'
