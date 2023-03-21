@@ -15,8 +15,12 @@ export type CustomSelectProps = {
   options: SelectOption[]
   onChange: (selected: SelectOption) => void
 }
-export type SelectProps = CustomSelectProps &
-  Omit<Omit<Omit<ReactSelectProps, 'value'>, 'onChange'>, 'options'>
+
+type OmitAll<T, K extends keyof T> = {
+  [P in keyof T as P extends K ? never : P]: T[P]
+}
+type OmittedProps = 'value' | 'onChange' | 'options'
+export type SelectProps = CustomSelectProps & OmitAll<ReactSelectProps, OmittedProps>
 
 const defaultInstanceid = 'react-select'
 
