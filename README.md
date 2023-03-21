@@ -26,8 +26,17 @@ yarn add shipui
 npm install shipui
 ```
 
+```js
+// next.config.js
+module.exports = {
+  compiler: {
+    emotion: true,
+  },
+}
+```
+
 ```tsx
-// utils/colors.ts
+// @/utils/colors.ts
 import { DefaultColors, Palette } from 'shipui'
 
 export const Colors: Palette = {
@@ -36,7 +45,7 @@ export const Colors: Palette = {
 ```
 
 ```tsx
-// pages/_app.tsx
+// @/pages/_app.tsx
 import { AppProps } from 'next/app'
 import React from 'react'
 import { ColorProvider, LoadingProgress, MetaHead, useLoadingProgressProps, MetaData } from 'shipui'
