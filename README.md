@@ -15,6 +15,9 @@ shipui
   </a>
 </p>
 
+> **Warning**<br/>
+> This library is still under rapid development 🛠
+
 ## 📦 Installation
 
 ```bash
