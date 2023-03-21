@@ -3,8 +3,6 @@ import styled from '@emotion/styled'
 import { AnimatePresence, MotionProps, motion } from 'framer-motion'
 import { useState } from 'react'
 
-import { Colors } from '@/utils/colors'
-
 const backgroundMotion: MotionProps = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -85,7 +83,7 @@ export const ModalContainer = styled(motion.div)`
   width: 100%;
   max-width: 400px;
 
-  background: ${Colors.background};
+  background: #f2f2f2;
   border-radius: 24px;
   overflow: hidden;
 
