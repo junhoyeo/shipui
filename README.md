@@ -41,6 +41,7 @@ import { DefaultColors, Palette } from 'shipui'
 
 export const Colors: Palette = {
   ...DefaultColors,
+  // FIXME: Override colors here
 }
 ```
 
@@ -52,6 +53,7 @@ import { ColorProvider, LoadingProgress, MetaHead, useLoadingProgressProps, Meta
 
 import { colors } from '@/utils/colors'
 
+// FIXME: Declare website's default metadata here
 const meta: MetaData = {
   title: 'ShipUI',
   description: 'UI components to ship stuff',
