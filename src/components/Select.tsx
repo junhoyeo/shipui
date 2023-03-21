@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { useCallback } from 'react'
-import ReactSelect from 'react-select'
+import ReactSelect, { Props as ReactSelectProps } from 'react-select'
 
 import { PaletteProps, useColors } from '@/utils/colors'
 
@@ -9,12 +9,14 @@ export type SelectOption = {
   label: string
 }
 
-export type SelectProps = {
+export type CustomSelectProps = {
   instanceId?: string
   value: string
   options: SelectOption[]
   onChange: (selected: SelectOption) => void
 }
+export type SelectProps = CustomSelectProps &
+  Omit<Omit<Omit<ReactSelectProps, 'value'>, 'onChange'>, 'options'>
 
 const defaultInstanceid = 'react-select'
 
@@ -23,6 +25,7 @@ export const Select: React.FC<SelectProps> = ({
   value,
   options,
   onChange: handleChange,
+  ...props
 }) => {
   const colors = useColors()
 
@@ -46,6 +49,7 @@ export const Select: React.FC<SelectProps> = ({
       defaultValue={options.find((v) => v.value === value)}
       onChange={onChange}
       isSearchable={false}
+      {...props}
     />
   )
 }
