@@ -1,5 +1,5 @@
 <h1 align="center">
-shipui
+ShipUI
 </h1>
 
 <blockquote align="center">
@@ -18,10 +18,54 @@ shipui
 > **Warning**<br/>
 > This library is still under rapid development 🛠
 
-## 📦 Installation
+## 📦 Installation and Usage
 
 ```bash
 yarn add shipui
 # Or with NPM
 npm install shipui
+```
+
+```tsx
+// utils/colors.ts
+import { DefaultColors, Palette } from 'shipui'
+
+export const Colors: Palette = {
+  ...DefaultColors,
+}
+```
+
+```tsx
+// pages/_app.tsx
+import { AppProps } from 'next/app'
+import React from 'react'
+import { ColorProvider, LoadingProgress, MetaHead, useLoadingProgressProps, MetaData } from 'shipui'
+
+import { colors } from '@/utils/colors'
+
+const meta: MetaData = {
+  title: 'ShipUI',
+  description: 'UI components to ship stuff',
+  image: 'https://www.junho.io/assets/og-image.jpg',
+  url: 'https://junho.io',
+  canonical: 'https://junho.io',
+  themeColor: '#fff',
+}
+
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+  const loadingProps = useLoadingProgressProps()
+
+  return (
+    <React.Fragment>
+      <MetaHead {...meta} />
+      <ColorProvider value={colors}>
+        <LoadingProgress {...loadingProps} />
+        <Component {...pageProps} />
+        <div id="portal" />
+      </ColorProvider>
+    </React.Fragment>
+  )
+}
+
+export default App
 ```
