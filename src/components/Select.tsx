@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { useCallback } from 'react'
 import ReactSelect from 'react-select'
 
-import { DefaultColors, PaletteProps, useColors } from '@/utils/colors'
+import { PaletteProps, useColors } from '@/utils/colors'
 
 export type SelectOption = {
   value: string

@@ -10,7 +10,7 @@ export {
   type LoadingProgressProps,
 } from '@/components/LoadingProgress'
 export { MetaHead, type MetaData, type MetaHeadProps } from '@/components/MetaHead'
-export { Modal, type ModalProps } from '@/components/Modal'
+export { Modal, type ModalProps, ModalBackground, ModalContainer } from '@/components/Modal'
 export { NoSSR, type NoSSRProps } from '@/components/NoSSR'
 export { PageContainer } from '@/components/PageContainer'
 export { Paragraph } from '@/components/Paragraph'
