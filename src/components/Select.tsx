@@ -9,7 +9,7 @@ export type SelectOption = {
   label: string
 }
 
-type SelectProps = {
+export type SelectProps = {
   instanceId?: string
   value: string
   options: SelectOption[]

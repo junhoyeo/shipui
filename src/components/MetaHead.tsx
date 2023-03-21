@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-type MetaData = {
+export type MetaData = {
   title: string
   description: string
   image: string
@@ -10,7 +10,7 @@ type MetaData = {
   themeColor: string
 }
 
-type MetaHeadProps = MetaData & {
+export type MetaHeadProps = MetaData & {
   children?: React.ReactNode
 }
 

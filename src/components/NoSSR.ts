@@ -1,6 +1,6 @@
 import React from 'react'
 
-type NoSSRProps = {
+export type NoSSRProps = {
   children?: React.ReactNode
 }
 

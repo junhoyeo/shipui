@@ -4,8 +4,8 @@ import { useCallback, useState } from 'react'
 
 import { Colors } from '@/utils/colors'
 
-type SidebarItem = { title: string; url: string }
-type SidebarProps = {
+export type SidebarItem = { title: string; url: string }
+export type SidebarProps = {
   selected?: string
   items: SidebarItem[]
 }

@@ -50,7 +50,7 @@ export const useLoadingProgressProps = () => {
   }
 }
 
-type LoadingProgressProps = {
+export type LoadingProgressProps = {
   isRouteChanging: boolean
 }
 
