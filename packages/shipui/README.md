@@ -48,7 +48,7 @@ import { AppProps } from 'next/app'
 import React from 'react'
 import { ColorProvider, LoadingProgress, MetaData, MetaHead, useLoadingProgressProps } from 'shipui'
 
-import { colors } from '@/utils/colors'
+import { Colors } from '@/utils/colors'
 
 // FIXME: Declare website's default metadata here
 const meta: MetaData = {
@@ -66,7 +66,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <React.Fragment>
       <MetaHead {...meta} />
-      <ColorProvider value={colors}>
+      <ColorProvider value={Colors}>
         <LoadingProgress {...loadingProps} />
         <Component {...pageProps} />
         <div id="portal" />
