@@ -1,5 +1,5 @@
 {
-  "name": "shipui",
+  "name": "shipui-workspace",
   "private": true,
   "description": "UI components to ship stuff",
   "license": "MIT",
@@ -15,5 +15,6 @@
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
     "prettier": "^2.8.6"
-  }
+  },
+  "packageManager": "yarn@3.5.0"
 }
