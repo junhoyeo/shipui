@@ -22,7 +22,7 @@ ShipUI
 
 ```bash
 yarn add shipui
-# Or with NPM
+# Or with npm
 npm install shipui
 ```
 
@@ -49,7 +49,7 @@ export const Colors: Palette = {
 // @/pages/_app.tsx
 import { AppProps } from 'next/app'
 import React from 'react'
-import { ColorProvider, LoadingProgress, MetaHead, useLoadingProgressProps, MetaData } from 'shipui'
+import { ColorProvider, LoadingProgress, MetaData, MetaHead, useLoadingProgressProps } from 'shipui'
 
 import { colors } from '@/utils/colors'
 
