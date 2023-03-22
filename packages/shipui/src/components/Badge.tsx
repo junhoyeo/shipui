@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { PaletteProps, useColors } from '@/utils/colors'
 
 const _Badge = styled.span<PaletteProps>`
+  width: fit-content;
   padding: 2px 4px;
   border-radius: 4px;
   background-color: ${({ colors }) => colors.opacity35};
