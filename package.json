@@ -1,39 +1,19 @@
 {
   "name": "shipui",
-  "version": "0.1.1-canary.5",
+  "private": true,
   "description": "UI components to ship stuff",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "typings": "dist/index.d.ts",
   "author": "Junho Yeo <i@junho.io>",
   "repository": "https://github.com/junhoyeo/shipui",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "format": "prettier --write .",
-    "build": "tsc && tsc-alias"
+    "build": "yarn workspace shipui build"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
-    "@types/node": "^18.15.5",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
-    "prettier": "^2.8.6",
-    "tsc-alias": "^1.8.4",
-    "typescript": "^5.0.2"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@tanem/react-nprogress": "^5.0.32",
-    "framer-motion": "^10.6.1",
-    "next": "^13.2.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-select": "^5.7.1"
+    "prettier": "^2.8.6"
   }
 }
