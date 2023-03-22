@@ -19,6 +19,7 @@ export { Row } from '@/components/Row'
 export { Select, type SelectOption, type SelectProps } from '@/components/Select'
 export { Textarea } from '@/components/Textarea'
 export {
+  createPalette,
   DefaultColors,
   type Palette,
   type PaletteProps,
