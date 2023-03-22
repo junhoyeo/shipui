@@ -6,7 +6,8 @@
   "author": "Junho Yeo <i@junho.io>",
   "repository": "https://github.com/junhoyeo/shipui",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "playground"
   ],
   "scripts": {
     "format": "prettier --write .",
