@@ -37,12 +37,9 @@ module.exports = {
 
 ```tsx
 // @/utils/colors.ts
-import { DefaultColors, Palette } from 'shipui'
+import { createPalette } from 'shipui'
 
-export const Colors: Palette = {
-  ...DefaultColors,
-  // FIXME: Override colors here
-}
+export const Colors = createPalette({ r: 166, g: 115, b: 255 })
 ```
 
 ```tsx
