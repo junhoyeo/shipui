@@ -3950,6 +3950,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     react-is: ^18.2.0
+    shipui: "workspace:^"
     typescript: ^4.9.3
   languageName: unknown
   linkType: soft
@@ -3963,7 +3964,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"shipui@workspace:packages/shipui":
+"shipui@workspace:^, shipui@workspace:packages/shipui":
   version: 0.0.0-use.local
   resolution: "shipui@workspace:packages/shipui"
   dependencies:
