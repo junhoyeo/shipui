@@ -3573,6 +3573,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"playground@workspace:playground":
+  version: 0.0.0-use.local
+  resolution: "playground@workspace:playground"
+  dependencies:
+    "@types/node": ^18.11.11
+    "@types/react": ^18.0.26
+    "@types/react-dom": ^18.0.9
+    eslint: ^8.29.0
+    eslint-config-next: ^13.0.6
+    eslint-config-prettier: ^8.5.0
+    next: ^13.0.6
+    react: 18.2.0
+    react-dom: 18.2.0
+    react-is: ^18.2.0
+    shipui: "workspace:^"
+    typescript: ^4.9.3
+  languageName: unknown
+  linkType: soft
+
 "plimit-lit@npm:^1.2.6":
   version: 1.5.0
   resolution: "plimit-lit@npm:1.5.0"
@@ -3935,25 +3954,6 @@ __metadata:
   checksum: 1a2bcae50de99034fcd92ad4212d8e01eedf52c7ec7830eedcf886622804fe36884278f2be8be0ea5fde3fd1c23911643a4e0f726c8685b61871c8908af01222
   languageName: node
   linkType: hard
-
-"shipui-playground@workspace:playground":
-  version: 0.0.0-use.local
-  resolution: "shipui-playground@workspace:playground"
-  dependencies:
-    "@types/node": ^18.11.11
-    "@types/react": ^18.0.26
-    "@types/react-dom": ^18.0.9
-    eslint: ^8.29.0
-    eslint-config-next: ^13.0.6
-    eslint-config-prettier: ^8.5.0
-    next: ^13.0.6
-    react: 18.2.0
-    react-dom: 18.2.0
-    react-is: ^18.2.0
-    shipui: "workspace:^"
-    typescript: ^4.9.3
-  languageName: unknown
-  linkType: soft
 
 "shipui-workspace@workspace:.":
   version: 0.0.0-use.local
