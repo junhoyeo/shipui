@@ -4,6 +4,10 @@ import { ColorProvider, LoadingProgress, MetaData, MetaHead, useLoadingProgressP
 
 import { Colors } from '@/utils/colors'
 
+import '@/styles/fonts.css'
+
+import { GlobalStyle } from '@/components/GlobalStyle'
+
 // FIXME: Declare website's default metadata here
 const meta: MetaData = {
   title: 'ShipUI',
@@ -20,6 +24,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <React.Fragment>
       <MetaHead {...meta} />
+      <GlobalStyle />
       <ColorProvider value={Colors}>
         <LoadingProgress {...loadingProps} />
         <Component {...pageProps} />
