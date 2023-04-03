@@ -9,7 +9,7 @@
   "author": "Junho Yeo <i@junho.io>",
   "repository": "https://github.com/junhoyeo/shipui",
   "scripts": {
-    "build": "tsc && tsc-alias"
+    "build": "rm -rf dist && tsc && tsc-alias"
   },
   "files": [
     "dist",
