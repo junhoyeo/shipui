@@ -17,7 +17,7 @@ export { Paragraph } from '@/components/Paragraph'
 export { Profile } from '@/components/Profile'
 export { Row } from '@/components/Row'
 export { Select, type SelectOption, type SelectProps } from '@/components/Select'
-export { Tab } from '@/components/Tab'
+export { Tab, type TabProps, type TabOption } from '@/components/Tab'
 export { Textarea } from '@/components/Textarea'
 export {
   createPalette,
