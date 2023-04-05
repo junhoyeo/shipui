@@ -1,6 +1,6 @@
 {
   "name": "shipui",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "UI components to ship stuff",
   "license": "MIT",
   "main": "dist/index.js",
