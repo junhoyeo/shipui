@@ -8,4 +8,8 @@ export const Paragraph = styled.p`
   line-height: 132%;
   letter-spacing: -0.02em;
   color: ${DefaultColors.text};
+
+  .keyword {
+    color: ${DefaultColors.keyword};
+  }
 `
