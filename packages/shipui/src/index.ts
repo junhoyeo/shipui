@@ -2,6 +2,7 @@ export { Badge } from '@/components/Badge'
 export { Box } from '@/components/Box'
 export { Button } from '@/components/Button'
 export { Col } from '@/components/Col'
+export { GradientBox } from '@/components/GradientBox'
 export { InlineBlock } from '@/components/InlineBlock'
 export { Input } from '@/components/Input'
 export {
