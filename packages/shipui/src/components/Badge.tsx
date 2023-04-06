@@ -6,7 +6,7 @@ const _Badge = styled.span<PaletteProps>`
   width: fit-content;
   padding: 2px 4px;
   border-radius: 4px;
-  background-color: ${({ colors }) => colors.opacity35};
+  background-color: ${({ colors }) => colors.opacity20};
   border: 2px solid ${({ colors }) => colors.opacity65};
   backdrop-filter: blur(4px);
 
