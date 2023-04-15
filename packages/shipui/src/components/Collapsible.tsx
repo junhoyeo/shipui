@@ -2,7 +2,9 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 
-import { Box, Col, Row } from '..'
+import { Box } from './Box'
+import { Col } from './Col'
+import { Row } from './Row'
 
 export type CollapsibleProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> & {
   title?: React.ReactNode
