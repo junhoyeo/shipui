@@ -68,13 +68,12 @@ export const LoadingProgress: React.FC<LoadingProgressProps> = ({ isRouteChangin
   )
 }
 
-const Container = styled.div<
-  PaletteProps & {
-    isFinished: boolean
-    animationDuration: number
-    progress: number
-  }
->`
+type ContainerProps = PaletteProps & {
+  isFinished: boolean
+  animationDuration: number
+  progress: number
+}
+const Container = styled.div<ContainerProps>`
   opacity: ${({ isFinished }) => (isFinished ? 0 : 1)};
   pointer-events: none;
   transition: opacity ${({ animationDuration }) => animationDuration}ms linear;
