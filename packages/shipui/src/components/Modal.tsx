@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import { AnimatePresence, MotionProps, motion } from 'framer-motion'
+import { AnimatePresence, HTMLMotionProps, MotionProps, motion } from 'framer-motion'
 import { useState } from 'react'
 
 const backgroundMotion: MotionProps = {
@@ -16,12 +16,12 @@ const containerMotion: MotionProps = {
   transition: { duration: 0.2 },
 }
 
-export type ModalProps = React.PropsWithChildren & {
+export type ModalProps = HTMLMotionProps<'div'> & {
   isOpen: boolean
   onClose: () => void
 }
 
-export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, ...containerProps }) => {
   const [disabled, setDisabled] = useState<boolean>(false)
 
   return (
@@ -40,9 +40,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
               setTimeout(() => setDisabled(false), 200)
             }}
           />
-          <ModalContainer key="modal" {...containerMotion}>
-            {children}
-          </ModalContainer>
+          <ModalContainer key="modal" {...containerMotion} {...containerProps} />
         </>
       )}
     </AnimatePresence>
