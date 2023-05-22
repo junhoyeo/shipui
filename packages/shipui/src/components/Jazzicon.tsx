@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import generateIdenticon from '@shipui/jazzicon'
-import { useMemo } from 'react'
+import { useEffect, useState } from 'react'
 
 import { PaletteProps, useColors } from '..'
 
@@ -18,18 +18,16 @@ export type JazziconProps = {
 }
 
 export const Jazzicon: React.FC<JazziconProps> = ({ address, colors: identiconColors }) => {
-  const html = useMemo(
-    () => ({
-      __html: generateIdenticon(ICON_SIZE, jsNumberForAddress(address), identiconColors).innerHTML,
-    }),
-    [address],
-  )
+  const [content, setContent] = useState<string | undefined>(undefined)
+  useEffect(() => {
+    setContent(generateIdenticon(ICON_SIZE, jsNumberForAddress(address), identiconColors).innerHTML)
+  }, [address])
 
   const colors = useColors()
 
   return (
     <Container colors={colors}>
-      <span dangerouslySetInnerHTML={html}></span>
+      <span dangerouslySetInnerHTML={{ __html: content || '' }}></span>
     </Container>
   )
 }
