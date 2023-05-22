@@ -26,6 +26,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@shipui/jazzicon": "workspace:^",
     "@tanem/react-nprogress": "^5.0.32",
     "framer-motion": "^10.6.1",
     "next": "^13.2.4",

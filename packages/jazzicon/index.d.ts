@@ -1,1 +1,1 @@
-export default function generateIdenticon(diameter: number, seed: number): HTMLElement
+export default function generateIdenticon(diameter: number, seed: number, colors: string[]): HTMLElement
