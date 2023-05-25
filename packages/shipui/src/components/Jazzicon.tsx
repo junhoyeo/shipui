@@ -12,12 +12,12 @@ const jsNumberForAddress = (address: string) => {
 
 export const ICON_SIZE = 24
 
-export type JazziconProps = {
+export type JazziconProps = React.HTMLAttributes<HTMLDivElement> & {
   address: string
   colors: string[]
 }
 
-export const Jazzicon: React.FC<JazziconProps> = ({ address, colors: identiconColors }) => {
+export const Jazzicon: React.FC<JazziconProps> = ({ address, colors: identiconColors, ...props }) => {
   const [content, setContent] = useState<string | undefined>(undefined)
   useEffect(() => {
     setContent(generateIdenticon(ICON_SIZE, jsNumberForAddress(address), identiconColors).innerHTML)
@@ -26,7 +26,7 @@ export const Jazzicon: React.FC<JazziconProps> = ({ address, colors: identiconCo
   const colors = useColors()
 
   return (
-    <Container colors={colors}>
+    <Container colors={colors} {...props}>
       <span dangerouslySetInnerHTML={{ __html: content || '' }}></span>
     </Container>
   )
