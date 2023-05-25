@@ -9,16 +9,18 @@ const options: SelectOption[] = [
 ]
 
 const colors = [
-  '#1E8CE0',
+  '#2CD3E1',
   '#92D0FF',
-  '#C7D3F7',
-  '#C4E0FE',
+  '#8dddff',
   '#ABF2E1',
   '#F9F7A2',
-  '#FFE1AC',
   '#FFC537',
-  '#FAB1F0',
+  '#FFB84C',
   '#FF9088',
+  '#F266AB',
+  '#A459D1',
+  '#7295ff',
+  '#1E8CE0',
 ]
 
 const HomePage: NextPage = () => {
@@ -29,12 +31,13 @@ const HomePage: NextPage = () => {
         <Input />
         <Select options={options} onChange={(value) => console.log(value)} defaultValue="mango" />
 
-        <Jazzicon address="1324545" colors={colors} />
-        <Jazzicon address="45" colors={colors} />
-        <Jazzicon address="5645567467yetgrgggert" colors={colors} />
-        <Jazzicon address="fergrgf434334gerrg" colors={colors} />
-        <Jazzicon address="1324545" colors={colors} />
-        <Button>Generate</Button>
+        <Jazzicon address="0x5DAE915Eb74d803d16C7F62560e379B39B065652" colors={colors} />
+        <Jazzicon address="0x3078389BDaA902819Ad38F2c22247427aA5Ab98e" colors={colors} />
+        <Jazzicon address="0xB0Ed411516056Fa09F335b50d28542Cf3Bf065e5" colors={colors} />
+        <Jazzicon address="0x4C1538BE5E0EAF9302ca067D5dDf9946240895e4" colors={colors} />
+        <Jazzicon address="0xF71f4f0f15B761A10822cF0298637892AEDD51C1" colors={colors} />
+
+        <Button>Button</Button>
       </Box>
     </PageContainer>
   )

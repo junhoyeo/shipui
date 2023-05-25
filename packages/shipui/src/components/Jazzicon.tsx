@@ -36,7 +36,7 @@ const Container = styled.div<PaletteProps>`
   height: ${ICON_SIZE}px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid ${({ colors }) => colors.opacity40};
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
   & > span {
     background-color: ${({ colors }) => colors.primary};
