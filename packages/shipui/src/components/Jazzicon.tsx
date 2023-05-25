@@ -15,25 +15,31 @@ export const ICON_SIZE = 24
 export type JazziconProps = React.HTMLAttributes<HTMLDivElement> & {
   address: string
   colors: string[]
+  size?: number
 }
 
-export const Jazzicon: React.FC<JazziconProps> = ({ address, colors: identiconColors, ...props }) => {
+export const Jazzicon: React.FC<JazziconProps> = ({
+  address,
+  colors: identiconColors,
+  size = ICON_SIZE,
+  ...props
+}) => {
   const [content, setContent] = useState<string | undefined>(undefined)
   useEffect(() => {
-    setContent(generateIdenticon(ICON_SIZE, jsNumberForAddress(address), identiconColors).innerHTML)
-  }, [address])
+    const identicon = generateIdenticon(size, jsNumberForAddress(address), identiconColors)
+    const html = identicon.innerHTML
+    setContent(html)
+  }, [address, size, identiconColors])
 
   const colors = useColors()
 
   return (
-    <Container colors={colors} {...props}>
+    <Container colors={colors} style={{ width: size, height: size, ...props.style }} {...props}>
       <span dangerouslySetInnerHTML={{ __html: content || '' }}></span>
     </Container>
   )
 }
 const Container = styled.div<PaletteProps>`
-  width: ${ICON_SIZE}px;
-  height: ${ICON_SIZE}px;
   border-radius: 50%;
 
   position: relative;
