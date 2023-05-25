@@ -1,6 +1,20 @@
+import styled from '@emotion/styled'
 import { NextPage } from 'next'
 import { useState } from 'react'
-import { Badge, Box, Button, Col, Input, Jazzicon, PageContainer, Row, Select, SelectOption } from 'shipui'
+import {
+  Badge,
+  Box,
+  Button,
+  Col,
+  Input,
+  Jazzicon,
+  PageContainer,
+  Row,
+  Select,
+  useColors,
+  type Palette,
+  type SelectOption,
+} from 'shipui'
 
 const options: SelectOption[] = [
   { value: 'mango', label: '🥭 Mango' },
@@ -25,7 +39,10 @@ const colors = [
 ]
 
 const HomePage: NextPage = () => {
-  const [jazziconKey, setJazziconKey] = useState<string>('0')
+  const palette = useColors()
+  const [jazziconKey, setJazziconKey] = useState<string>(
+    '12955c65fdd11a829805993598574ac9a8265812300f75dbc96eac358b5cb419',
+  )
 
   return (
     <PageContainer>
@@ -37,15 +54,7 @@ const HomePage: NextPage = () => {
         </Box>
 
         <Box>
-          <Row>
-            <Jazzicon address="0x5DAE915Eb74d803d16C7F62560e379B39B065652" colors={colors} />
-            <Jazzicon address="0x3078389BDaA902819Ad38F2c22247427aA5Ab98e" colors={colors} />
-            <Jazzicon address="0xB0Ed411516056Fa09F335b50d28542Cf3Bf065e5" colors={colors} />
-            <Jazzicon address="0x4C1538BE5E0EAF9302ca067D5dDf9946240895e4" colors={colors} />
-            <Jazzicon address="0xF71f4f0f15B761A10822cF0298637892AEDD51C1" colors={colors} />
-          </Row>
-
-          <Jazzicon address={jazziconKey} colors={colors} size={100} />
+          <StyledJazzicon palette={palette} address={jazziconKey} colors={colors} size={64} />
           <Button
             onClick={async () => {
               const utf8 = new TextEncoder().encode(Math.random().toString(16))
@@ -64,3 +73,10 @@ const HomePage: NextPage = () => {
 }
 
 export default HomePage
+
+const StyledJazzicon = styled(Jazzicon)<{ palette: Palette }>`
+  & > span,
+  svg {
+    background-color: ${({ palette }) => palette.primary};
+  }
+`
