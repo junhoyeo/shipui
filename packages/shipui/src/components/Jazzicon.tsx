@@ -35,10 +35,23 @@ const Container = styled.div<PaletteProps>`
   width: ${ICON_SIZE}px;
   height: ${ICON_SIZE}px;
   border-radius: 50%;
+
+  position: relative;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 
   & > span {
     background-color: ${({ colors }) => colors.primary};
+  }
+
+  &:before {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 `
