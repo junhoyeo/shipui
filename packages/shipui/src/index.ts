@@ -6,6 +6,7 @@ export { Collapsible, CollapsibleProps } from '@/components/Collapsible'
 export { GradientBox } from '@/components/GradientBox'
 export { InlineBlock } from '@/components/InlineBlock'
 export { Input } from '@/components/Input'
+export { Jazzicon } from '@/components/Jazzicon'
 export {
   LoadingProgress,
   useLoadingProgressProps,
