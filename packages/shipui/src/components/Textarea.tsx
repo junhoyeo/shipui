@@ -10,7 +10,7 @@ const _Textarea = styled.textarea<PaletteProps>`
   border-radius: 8px;
   background-color: ${({ colors }) => colors.background};
 `
-export const Textarea: React.FC<React.HTMLAttributes<HTMLTextAreaElement>> = (props) => {
+export const Textarea: React.FC<React.TextareaHTMLAttributes<HTMLTextAreaElement>> = (props) => {
   const colors = useColors()
   return <_Textarea colors={colors} {...props} />
 }

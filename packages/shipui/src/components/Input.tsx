@@ -9,7 +9,7 @@ const _Input = styled.input<PaletteProps>`
   border-radius: 8px;
   background-color: ${({ colors }) => colors.background};
 `
-export const Input: React.FC<React.HTMLAttributes<HTMLInputElement>> = (props) => {
+export const Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = (props) => {
   const colors = useColors()
   return <_Input colors={colors} {...props} />
 }
