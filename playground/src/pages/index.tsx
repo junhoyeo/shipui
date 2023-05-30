@@ -7,14 +7,13 @@ import {
   Button,
   Col,
   Input,
-  Jazzicon,
   PageContainer,
-  Row,
   Select,
   useColors,
   type Palette,
   type SelectOption,
 } from 'shipui'
+import { Jazzicon } from 'shipui/dist/components/Jazzicon'
 
 const options: SelectOption[] = [
   { value: 'mango', label: '🥭 Mango' },
