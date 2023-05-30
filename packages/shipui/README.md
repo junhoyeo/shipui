@@ -57,7 +57,7 @@ const meta: MetaData = {
   image: 'https://www.junho.io/assets/og-image.jpg',
   url: 'https://junho.io',
   canonical: 'https://junho.io',
-  themeColor: '#fff',
+  themeColor: Colors.primary,
 }
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
