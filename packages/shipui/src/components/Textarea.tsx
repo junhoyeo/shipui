@@ -1,10 +1,16 @@
 import styled from '@emotion/styled'
 
-export const Textarea = styled.textarea`
+import { PaletteProps, useColors } from '..'
+
+const _Textarea = styled.textarea<PaletteProps>`
   width: 100%;
   padding: 16px;
   border: 0;
   resize: none;
   border-radius: 8px;
-  background-color: #f3f4f5;
+  background-color: ${({ colors }) => colors.background};
 `
+export const Textarea: React.FC<React.HTMLAttributes<HTMLTextAreaElement>> = (props) => {
+  const colors = useColors()
+  return <_Textarea colors={colors} {...props} />
+}

@@ -1,9 +1,15 @@
 import styled from '@emotion/styled'
 
-export const Input = styled.input`
+import { PaletteProps, useColors } from '..'
+
+const _Input = styled.input<PaletteProps>`
   width: 100%;
   padding: 16px;
   border: 0;
   border-radius: 8px;
-  background-color: #f3f4f5;
+  background-color: ${({ colors }) => colors.background};
 `
+export const Input: React.FC<React.HTMLAttributes<HTMLInputElement>> = (props) => {
+  const colors = useColors()
+  return <_Input colors={colors} {...props} />
+}

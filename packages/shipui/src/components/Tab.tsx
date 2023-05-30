@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
+import { PaletteProps, useColors } from '..'
 import { Box } from './Box'
 
 export type TabOption<T extends string> = {
@@ -14,6 +15,7 @@ export type TabProps<T extends string> = Omit<React.HTMLAttributes<HTMLUListElem
 }
 
 export function Tab<T extends string>({ selected, items, onChange, ...props }: TabProps<T>) {
+  const colors = useColors()
   const containerRef = useRef<HTMLUListElement>(null)
   const [tabWidth, setTabSize] = useState<number>(0)
   const [paddingLeft, setPaddingLeft] = useState<number>(0)
@@ -43,7 +45,7 @@ export function Tab<T extends string>({ selected, items, onChange, ...props }: T
   useEffect(() => setLeft(tabIndex * tabWidth + paddingLeft), [tabIndex, tabWidth, paddingLeft])
 
   return (
-    <Container ref={containerRef} {...props}>
+    <Container ref={containerRef} colors={colors} {...props}>
       {items.map((item, index) => {
         const isSelected = selected === item.value
         return (
@@ -70,13 +72,13 @@ export function Tab<T extends string>({ selected, items, onChange, ...props }: T
   )
 }
 
-const Container = styled.ul`
+const Container = styled.ul<PaletteProps>`
   padding: 6px 7px;
   width: 100%;
   height: 56px;
   position: relative;
 
-  background-color: #f3f4f5;
+  background-color: ${({ colors }) => colors.background};
   border-radius: 12px;
 
   display: flex;
